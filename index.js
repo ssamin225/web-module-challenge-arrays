@@ -46,6 +46,7 @@ Use the copy function below to do the following:
 */
 
 function copy(array){
+
   return [...array];
 }    
 
@@ -60,6 +61,7 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 function is31Flavors(array){
+  
  if (array.length === 31) {
    return true;
  } else {
@@ -81,11 +83,10 @@ Use the addFlavor function below to do the following:
 
 
 function addFlavor(array, flavor){
+
  array.unshift(flavor);
  return array;
 }
-
-console.log(addFlavor(originalFlavors, "Rainbow Sherbert"));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -99,6 +100,7 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor(array){
+
  array.pop(array)
  return array;
 }
@@ -115,6 +117,7 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 function getFlavorByIndex(array, number){
+
   return array[number];
 }
 
@@ -134,11 +137,16 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(array, flavor){
+
+  for (let i = 0; i < array.length; i++) {
+    if (flavor === array[i]) {
+      array.splice(i, 1)
+    }
+  }
+
+  return array;
 }
-
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
@@ -160,8 +168,17 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(array, string){
+
+  let matches = []
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].includes(string)) {
+      matches.push(array[i])
+    }
+  }
+
+  return matches;
 }
 
 
